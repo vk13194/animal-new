@@ -7,7 +7,7 @@ import InputSerach from './search/InputSerach';
 const Home = () => {
     return (
         <Container>
-        <div className="search_bar">
+        <div className="search_bar shadow-lg p-3 mb-5 bg-white rounded mt-2">
         <InputSerach />
         </div>
         <div className="animal_list">

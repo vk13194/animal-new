@@ -13,7 +13,7 @@ const AnimalDisplay = ({animalPost, location}) => {
     console.log('locationpost',location)
     return (
         <div className="Container">
-         <Card  className="card_detail" >
+         <Card  className="card_detail shadow-lg  mb-5 bg-white rounded" >
          <Card.Header>{animalPost.milkPerDay} लीटर दूध 
   , {animalPost.whatTimePregnant} ब्यात, ₹ {animalPost.price}  
   {' '}|{' '} <BiTime /> <Moment date={animalPost.date} fromNow/>|

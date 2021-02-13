@@ -2,6 +2,9 @@ import React,{useState, useContext} from 'react'
 import { Container,Card } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
+import { AiFillPhone } from "react-icons/ai";
+import { CgPassword } from "react-icons/cg";
+
 import UserContext from '../../context/userContext'
 const Otp = () => {
   const history = useHistory();
@@ -44,28 +47,28 @@ const onSubmit = async (e )=>{
 
     return (
       <div>
-           <Container className="mt-5">
-        <Card>
+           <Container className="mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+        <Card className="shadow-lg p-3  bg-white rounded">
   <Card.Header as="h5">Enter your detail</Card.Header>
   <Card.Body>
     <Card.Text>
     <form onSubmit={onSubmit}>
   <div className="form-group">
-    <label htmlFor="phonenumber">Enter your phonenumber</label>
+  <AiFillPhone /> <label htmlFor="phonenumber">Enter your phonenumber</label>
     <input type="text" className="form-control"
      id="phonenumber"  placeholder="enter your phonenumber" 
      name='phonenumber' value={phonenumber} onChange={onChange}
      />
   </div>
   <div className="form-group">
-    <label htmlFor="code">Enter your code</label>
+  <CgPassword /> <label htmlFor="code">Enter your otp</label>
     <input type="text" className="form-control"
-     id="code"  placeholder="enter your code" 
+     id="code"  placeholder="enter your otp" 
      name='code' value={code} onChange={onChange}
      />
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control"  />
+      <input type="submit" className="form-control bg-primary text-white"  />
         </div>
   </form>
     </Card.Text>

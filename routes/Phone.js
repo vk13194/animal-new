@@ -3,7 +3,7 @@ const router = express.Router();
 const Phone = require('../models/Phone')
 let serviceID="VAfcc416d0f24f15ebef78a3820b8bfdac"
 let accountSID="ACb45fdda79ef3c6ff6f1f8a10bfa0ba92"
-let authToken="7e0478d341013e2df71b493531077122"
+let authToken="c23fee4005f45365446b8bc9c832eaa3"
 const client = require('twilio')(accountSID,authToken)
 const jwt = require('jsonwebtoken')
 const auth= require('../middleware/auth')
@@ -25,7 +25,6 @@ router.post('/login', async(req,res)=>{
             const {phonenumber, name} = req.body
         const phone = await Phone.findOne({phonenumber})
         if(phone){
-            console.log(phone)
             res.status(200).json({phone} ) 
         }else {
         const phone = new Phone({

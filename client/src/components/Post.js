@@ -60,8 +60,8 @@ var token =userData.token
       
 }
     return (
-        <Container>
-           <Card style={{marginTop:"20px"}}>
+        <Container className="shadow-lg p-3 mb-5 bg-white rounded ">
+           <Card style={{marginTop:"20px"}} className="shadow-lg p-3 bg-white rounded ">
            <Card.Header as="h5">Shell Animal </Card.Header>
            <Card.Text>
             <form onSubmit={onSubmit} encType="multipart/form-data">
@@ -155,7 +155,7 @@ var token =userData.token
         </div>
 
         <div className="form-group">  
-      <input type="submit" className="form-control"  />
+      <input type="submit" className="form-control bg-primary text-white"  />
         </div>
             </form>
            </Card.Text>

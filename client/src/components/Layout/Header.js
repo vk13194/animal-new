@@ -43,8 +43,10 @@ const Header = () => {
 <Navbar.Brand >Animalls</Navbar.Brand>
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 <Navbar.Collapse id="basic-navbar-nav">
- <Link to="/phone" className="nav-link">
- Login </Link>      
+  <nav className="ml-auto">
+      <Link to="/phone" className="nav-link" >
+      Login</Link>
+  </nav>    
 </Navbar.Collapse>
   </Navbar> </>)}
         </div>

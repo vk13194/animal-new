@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { Container,Card } from 'react-bootstrap'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import { BsFillPersonFill } from "react-icons/bs";
+import { AiFillPhone } from "react-icons/ai";
 
 const Phone = () => {
   const history = useHistory();
@@ -27,28 +29,28 @@ const Phone = () => {
    
   }
     return (
-        <Container className="mt-5">
-        <Card>
+        <Container className="mt-5 shadow-lg p-3 mb-5 bg-white rounded ">
+        <Card className="shadow-lg p-3  bg-white rounded">
   <Card.Header as="h5">Enter your detail</Card.Header>
   <Card.Body>
     <Card.Text>
     <form onSubmit={onSubmit}>
     <div className="form-group">
-    <label htmlFor="name">enter your name</label>
+    <BsFillPersonFill /> <label htmlFor="name">Enter your name</label>
     <input type="text" className="form-control"
      id="name"  placeholder="enter your name"
      name='name' value={name} onChange={onChange}
-      />
+      required/>
   </div>
   <div className="form-group">
-    <label htmlFor="phonenumber">enter your phonenumber</label>
+  <AiFillPhone />  <label htmlFor="phonenumber">Enter your phonenumber</label>
     <input type="text" className="form-control"
      id="phonenumber"  placeholder="enter your phonenumber" 
      name='phonenumber' value={phonenumber} onChange={onChange}
-     />
+     required/>
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control"  />
+      <input type="submit" className="form-control bg-primary text-white"  />
         </div>
   </form>
     </Card.Text>

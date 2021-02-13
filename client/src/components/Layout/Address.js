@@ -35,8 +35,8 @@ try {
 
 }
     return (
-        <Container className="mt-3">
-        <Card>
+        <Container className="mt-3  shadow-lg p-3 mb-5 bg-white rounded">
+        <Card className="mt-5 shadow-lg p-3 bg-white rounded">
   <Card.Header as="h5">Enter your Address</Card.Header>
   <Card.Body>
     <Card.Text>
@@ -68,7 +68,7 @@ try {
      />
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control"  />
+      <input type="submit" className="form-control bg-primary text-white"  />
         </div>
     </form>
     </Card.Text>

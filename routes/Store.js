@@ -30,10 +30,8 @@ router.get('/store', async(req, res, next)=>{
 })*/
 router.post('/store', auth, async(req, res)=>{
     try {
-       // const store = await Store.create(req.body)
         const loc = await geocoder.geocode(req.body.address);
-       // console.log(loc[0].city)
-      // const {location} =req.body
+       
     
       var location = {
         type: 'Point',
@@ -43,16 +41,13 @@ router.post('/store', auth, async(req, res)=>{
         state: loc[0].state,
         county: loc[0].county
       };
-      console.log('location',location)
        const store = new Store({
         location
        })
        const user = await Phone.findById(req.phone.id);
        const userlength= user.store.length
-       console.log('length', userlength)
        if(userlength === 0){
         await user.store.push(store.id)
-        console.log("user",user)
        await user.save()
        }
        await store.save()
@@ -64,11 +59,8 @@ router.post('/store', auth, async(req, res)=>{
 })
 router.get('/data', auth, async(req, res)=>{
     try {
-     //console.log(req.phone.id)
      const phone = await Phone.findById(req.phone.id).populate('store')
-    // console.log(phone.store)
-    // var myData= phone.store
-    // console.log(phone.store[0].location.coordinates)
+    
        var mylog = phone.store[0].location.coordinates
        console.log(mylog)
         const options ={
