@@ -66,7 +66,7 @@ router.get('/data', auth, async(req, res)=>{
         const options ={
             location:{
                 $geoWithin:{
-                    $centerSphere:[ mylog, 15/3936.2]
+                    $centerSphere:[ mylog, 25/3963.2]
                 }
             }
            

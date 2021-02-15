@@ -2,6 +2,9 @@ import React,{useState, useContext} from 'react'
 import {Container, Card} from 'react-bootstrap'
 import UserContext from '../context/userContext'
 import axios from 'axios'
+import Phone from './Layout/Phone'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Post = () => {
    // eslint-disable-next-line
    const { userData, setUserData } = useContext(UserContext);
@@ -21,6 +24,7 @@ const Post = () => {
         photo:''
     })
   const [myimage, setMyimage] = useState()
+  const notify = () => toast.success("your post is submit");
   // eslint-disable-next-line
   const {
    animal,bride,age,pregnentTimes,milkPerDay,milkcapacity,price,whatTimePregnant,
@@ -60,7 +64,8 @@ var token =userData.token
       
 }
     return (
-        <Container className="shadow-lg p-3 mb-5 bg-white rounded ">
+       <div>
+          {userData.token ? (<><Container className="shadow-lg p-3 mb-5 bg-white rounded ">
            <Card style={{marginTop:"20px"}} className="shadow-lg p-3 bg-white rounded ">
            <Card.Header as="h5">Shell Animal </Card.Header>
            <Card.Text>
@@ -155,12 +160,15 @@ var token =userData.token
         </div>
 
         <div className="form-group">  
-      <input type="submit" className="form-control bg-primary text-white"  />
+      <input type="submit" className="form-control bg-primary text-white"  onClick={notify} />
         </div>
+        <ToastContainer />
             </form>
            </Card.Text>
             </Card> 
-            </Container>
+            </Container> </>): <Phone />}
+       </div>
+        
     )
 }
 

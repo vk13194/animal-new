@@ -4,13 +4,16 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import UserContext from '../../context/userContext'
 import Phone from './Phone'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Address = () => {
   const history = useHistory(); 
   const { userData} = useContext(UserContext);
-  const [myaddress, setMyaddress]= useState({
+  const [myaddress, setMyaddress]= useState({ 
     address:''
   })
-  
+
+  const notify = () => toast.success("your addresss submit");
 const {address} = myaddress;
 const onChange=(e)=>{
   setMyaddress({...myaddress,[e.target.name]:e.target.value})
@@ -71,8 +74,9 @@ try {
      />
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control bg-primary text-white"  />
+      <input type="submit" className="form-control bg-primary text-white" onClick={notify} />
         </div>
+        <ToastContainer />
     </form>
     </Card.Text>
   </Card.Body>
