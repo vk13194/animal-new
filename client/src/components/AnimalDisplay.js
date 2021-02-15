@@ -6,11 +6,17 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import { BiTime } from "react-icons/bi";
 import { GoLocation } from "react-icons/go";
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { FiPhoneOutgoing } from 'react-icons/fi';
 
 
 const AnimalDisplay = ({animalPost, location}) => {
     console.log('animalpost',animalPost)
     console.log('locationpost',location)
+   var what =animalPost.postedBy.phonenumber
+    const whatsApp =() =>{
+  alert(what)
+    }
     return (
        
         
@@ -30,7 +36,9 @@ const AnimalDisplay = ({animalPost, location}) => {
 <Card.Text>ये {animalPost.bride}
  {animalPost.age} साल की है।यह 2 महीने पहलेब्यायी है अभी गभभवती  है|</Card.Text>
  <Card.Text className="d-flex justify-content-between">
- <h6>{animalPost.postedBy.name}</h6>  <h6> {animalPost.postedBy.phonenumber}</h6>
+ <h6>{animalPost.postedBy.name}</h6>  <h3> <FiPhoneOutgoing  onClick={whatsApp}/> </h3>  
+ <h3> <IoLogoWhatsapp  onClick={whatsApp}/> </h3>
+ 
  </Card.Text>
  
 </Card.Body>
