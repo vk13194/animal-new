@@ -3,8 +3,9 @@ import { Container, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import UserContext from '../../context/userContext'
+import Phone from './Phone'
 const Address = () => {
-  const history = useHistory();
+  const history = useHistory(); 
   const { userData} = useContext(UserContext);
   const [myaddress, setMyaddress]= useState({
     address:''
@@ -35,7 +36,9 @@ try {
 
 }
     return (
-        <Container className="mt-3  shadow-lg p-3 mb-5 bg-white rounded">
+      <div>
+        {token ?(<>
+          <Container className="mt-3  shadow-lg p-3 mb-5 bg-white rounded">
         <Card className="mt-5 shadow-lg p-3 bg-white rounded">
   <Card.Header as="h5">Enter your Address</Card.Header>
   <Card.Body>
@@ -75,6 +78,9 @@ try {
   </Card.Body>
 </Card>
         </Container>
+         </>):<Phone /> }
+      </div>
+        
     )
 }
 

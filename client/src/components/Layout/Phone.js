@@ -4,15 +4,16 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom';
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillPhone } from "react-icons/ai";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Phone = () => {
   const history = useHistory();
-
   const [post, setPost] = useState({
    name:"",
    phonenumber:""
   })
   const {name, phonenumber}= post
+  const notify = () => toast.success("your otp send");
   const onChange=(e)=>{
     setPost({...post,[e.target.name]:e.target.value})
     }
@@ -50,12 +51,14 @@ const Phone = () => {
      required/>
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control bg-primary text-white"  />
+      <input type="submit" className="form-control bg-primary text-white" onClick={notify} />
         </div>
+        <ToastContainer />
   </form>
     </Card.Text>
   </Card.Body>
 </Card>
+
         </Container>
     )
 }

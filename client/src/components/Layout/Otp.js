@@ -4,8 +4,9 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import { AiFillPhone } from "react-icons/ai";
 import { CgPassword } from "react-icons/cg";
-
 import UserContext from '../../context/userContext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Otp = () => {
   const history = useHistory();
 
@@ -20,6 +21,7 @@ const Otp = () => {
   })
   const { setUserData } = useContext(UserContext);
   const {phonenumber,code} =myotp
+  const notify = () => toast.success("your are login");
   const onChange=(e)=>{
     setMyotp({...myotp,[e.target.name]:e.target.value})
     }
@@ -68,8 +70,9 @@ const onSubmit = async (e )=>{
      />
   </div>
   <div className="form-group">  
-      <input type="submit" className="form-control bg-primary text-white"  />
+      <input type="submit" className="form-control bg-primary text-white" onClick={notify} />
         </div>
+        <ToastContainer />
   </form>
     </Card.Text>
   </Card.Body>
