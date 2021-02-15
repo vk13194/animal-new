@@ -6,6 +6,7 @@ const Animal = ({animal}) => {
     console.log('animal',animal)
     return (
         <div >
+        <h6>you search animal 40km</h6>
         {animal.post.map(item=>
         <SimpleReactLightbox>
          <AnimalDisplay  animalPost={item} location={animal.location}

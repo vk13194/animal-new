@@ -12,8 +12,8 @@ const AnimalDisplay = ({animalPost, location}) => {
     console.log('animalpost',animalPost)
     console.log('locationpost',location)
     return (
-        <div>
-        <h6>you search 40km area</h6>
+       
+        
         <div className="Container">
          <Card  className="card_detail shadow-lg  mb-5 bg-white rounded" >
          <Card.Header>{animalPost.milkPerDay} लीटर दूध 
@@ -36,7 +36,7 @@ const AnimalDisplay = ({animalPost, location}) => {
 </Card.Body>
              </Card>   
         </div>
-        </div>
+       
     )
 }
 
