@@ -71,7 +71,12 @@ router.get('/data', auth, async(req, res)=>{
             }
            
         }
-        const store = await Store.find(options).populate('post')
+        const store = await Store.find(options).populate({path:'post',model:'Post',
+        populate:{
+         path: 'postedBy',
+         model: 'Phone'
+        }
+     })
         res.json(store)
     } catch (err) {
         console.log(err)

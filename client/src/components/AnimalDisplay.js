@@ -12,6 +12,8 @@ const AnimalDisplay = ({animalPost, location}) => {
     console.log('animalpost',animalPost)
     console.log('locationpost',location)
     return (
+        <div>
+        <h6>you search 40km area</h6>
         <div className="Container">
          <Card  className="card_detail shadow-lg  mb-5 bg-white rounded" >
          <Card.Header>{animalPost.milkPerDay} लीटर दूध 
@@ -27,8 +29,13 @@ const AnimalDisplay = ({animalPost, location}) => {
 <Card.Body>
 <Card.Text>ये {animalPost.bride}
  {animalPost.age} साल की है।यह 2 महीने पहलेब्यायी है अभी गभभवती  है|</Card.Text>
+ <Card.Text className="d-flex justify-content-between">
+ <h6>{animalPost.postedBy.name}</h6>  <h6> {animalPost.postedBy.phonenumber}</h6>
+ </Card.Text>
+ 
 </Card.Body>
              </Card>   
+        </div>
         </div>
     )
 }
